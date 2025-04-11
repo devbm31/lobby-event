@@ -1,0 +1,54 @@
+# macOS 관련 파일 무시
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 아이콘 파일 무시
+Icon
+
+# Thumbnails
+._*
+
+# Spotlight 검색 데이터
+.Spotlight-V100
+
+# macOS Trash 폴더
+.Trashes
+
+# 사용자 설정 파일
+*.swp
+*.swo
+
+# Visual Studio Code 설정 파일
+.vscode/
+
+# Node.js 프로젝트 예시
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Python 예시
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+
+# JetBrains 계열 IDE
+.idea/
+
+# 로그 파일
+*.log
+
+# 빌드 결과물
+dist/
+build/
+out/
+
+# 환경설정 파일
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
