@@ -108,7 +108,7 @@ header {
 /* 마키 애니메이션 */
 .marquee {
   display: inline-block;
-  padding-left: 85%; /* 시작 위치를 오른쪽 바깥으로 */
+  padding-left: 70%; /* 시작 위치를 오른쪽 바깥으로 */
   animation: scroll-left 25s linear infinite;
 }
 
@@ -145,8 +145,8 @@ header {
 }
 
 /* ================================
-   Extracted Media Queries
-   ================================ */
+    Extracted Media Queries
+  ================================ */
 
 /* .hotel-logo 관련 미디어 쿼리 */
 @media (min-width: 550px) {
