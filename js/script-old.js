@@ -7,7 +7,7 @@ const gifFiles = [
 ];
 
 let currentGifIndex = 0;
-const gifElement = document.getElementById("gifContainer");
+const gifElement = document.getElementById("animatedGif");
 
 function changeGif() {
   gifElement.src = gifFiles[currentGifIndex].src;
