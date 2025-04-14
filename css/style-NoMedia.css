@@ -47,7 +47,7 @@ body {
 /* 헤더 영역 */
 header {
   display: grid;
-  grid-template-columns: min-content 2.3fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr; /* 좌-중앙-우 고정 비율 */
   position: fixed;
   top: 0;
   left: 0;
@@ -65,7 +65,6 @@ header {
   text-align: center;
   border: var(--border-width) solid var(--primary-color);
   border-width: var(--border-width) var(--border-width) 0;
-  grid-column: span 3;
   background: repeating-linear-gradient(
     90deg,
     var(--primary-color) 0px,
@@ -73,7 +72,9 @@ header {
     transparent 5px,
     transparent 10px
   );
+  grid-column: 1 / 2; /* 왼쪽 영역 */
 }
+/* 호텔 로고 텍스트 */
 .hotel-logo span {
   padding-top: 0.5rem;
   &:nth-child(odd) {
@@ -92,7 +93,6 @@ header {
   white-space: nowrap;
   border: var(--border-width) solid var(--primary-color);
   border-width: var(--border-width) var(--border-width) 0;
-  grid-column: span 3;
   background: var(--primary-color);
   color: var(--announcement-text);
   padding: 1rem 1.6rem;
@@ -100,9 +100,10 @@ header {
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  flex-direction: column; /* 자식 요소를 수직으로 배치 */
+  flex-direction: column;
   gap: 1rem;
   line-height: 1.1;
+  grid-column: 2 / 3; /* 가운데 영역 */
 }
 
 /* 마키 애니메이션 */
@@ -125,77 +126,19 @@ header {
 .location-info {
   border: var(--border-width) solid var(--primary-color);
   border-width: var(--border-width) var(--border-width) 0;
-  grid-column: 1 / -1;
   background: var(--primary-color);
   color: var(--announcement-primary);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   text-align: center;
   padding: 0.6rem;
-  /* 배경이미지 처리 */
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://cdn.e2news.com/news/photo/202301/249925_103644_5324.png")
       no-repeat center/cover;
-
-  p:nth-child(1) {
-    font-family: "Syncopate", sans-serif;
-    font-weight: 700;
-    font-size: 1.4rem;
-    margin: 0 0.5rem 0.5rem;
-  }
+  grid-column: 3 / 4; /* 오른쪽 영역 */
 }
-
-/* ================================
-    Extracted Media Queries
-  ================================ */
-
-/* .hotel-logo 관련 미디어 쿼리   */
-@media (min-width: 550px) {
-  .hotel-logo {
-    grid-column: span 1;
-    background: var(--primary-color);
-  }
-}
-
-/* .announcements 관련 미디어 쿼리   */
-@media (min-width: 550px) {
-  .announcements {
-    grid-column: span 2;
-    border-width: var(--border-width) var(--border-width) 0 0;
-  }
-}
-
-@media (min-width: 880px) {
-  .announcements {
-    grid-column: span 1;
-    border-width: var(--border-width) 0 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .announcements {
-    font-size: 1.8rem;
-  }
-}
-
-/* .location-info 및 하위 p 요소 관련 미디어 쿼리 */
-@media (min-width: 550px) {
-  .location-info {
-    display: flex;
-    align-items: center;
-  }
-  .location-info p:nth-child(1) {
-    margin: 0.3rem 0.8rem 0.3rem 0.3rem;
-  }
-}
-
-@media (min-width: 880px) {
-  .location-info {
-    grid-column: 3 / 4;
-  }
-}
-
-@media (min-width: 1400px) {
-  .location-info p:nth-child(1) {
-    font-size: 1.6rem;
-  }
+.location-info p:nth-child(1) {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 0 0.5rem 0.5rem;
 }
